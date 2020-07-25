@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2beta5
+kind: Config
+metadata:
+  name: hw-
+build:
+  artifacts:
+  - image: otus-nickolaymudry-hw2
+    context: app
+  local: {}
+deploy:
+  kubectl:
+    manifests:
+    - hw2-deployment.yaml
+    - hw2-service.yaml
+    - hw2-ingress.yaml
